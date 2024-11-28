@@ -3,11 +3,11 @@ const { connectToMongoDB, disconnectFromMongoDB } = require("./src/mongodb");
 const app = express();
 const cors = require("cors");
 process.loadEnvFile();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3008;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.ORIGIN
   })
 );
 app.use(express.json());

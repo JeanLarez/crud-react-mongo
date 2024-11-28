@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const URL = import.meta.env.VITE_URL_BACKEND
+
 function App() {
   const [frutas, setFrutas] = useState([]);
   const [nuevaFruta, setNuevaFruta] = useState({
@@ -21,7 +23,7 @@ function App() {
   const [id, setID] = useState("");
 
   const fetchFrutas = async () => {
-    const URL_BASE = "http://localhost:3008/frutas";
+    const URL_BASE = `${URL}`;
     let URL_API = URL_BASE;
 
     try {
@@ -48,7 +50,7 @@ function App() {
 
   const agregarFruta = async () => {
     try {
-      const API_URL = "http://localhost:3008/frutas";
+      const API_URL = `${URL}`;
       const response = await fetch(API_URL, {
         method: "POST",
         headers: {
@@ -69,7 +71,7 @@ function App() {
   };
 
   const handleEdit = async () => {
-    const URL_BASE = `http://localhost:3008/frutas/id`;
+    const URL_BASE = `${URL}/id`;
     try {
       const API_URL = `${URL_BASE}/${nuevosDatos.id}`;
       const response = await fetch(API_URL, {
@@ -99,7 +101,7 @@ function App() {
 
   const eliminarFruta = async () => {
     try {
-      const API_URL = `http://localhost:3008/frutas/id/${id}`;
+      const API_URL = `${URL}/id/${id}`;
       const response = await fetch(API_URL, {
         method: "DELETE",
       });
