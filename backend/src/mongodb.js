@@ -1,5 +1,6 @@
 const { MongoClient } = require('mongodb') 
-process.loadEnvFile()
+const dotenv = require('dotenv')
+dotenv.config()
 
 
 const URI = process.env.MONGODB_URLSTRING

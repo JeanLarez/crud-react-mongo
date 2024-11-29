@@ -2,7 +2,8 @@ const express = require("express");
 const { connectToMongoDB, disconnectFromMongoDB } = require("./src/mongodb");
 const app = express();
 const cors = require("cors");
-process.loadEnvFile();
+const dotenv = require("dotenv")
+dotenv.config()
 const PORT = process.env.PORT || 3008;
 
 app.use(
