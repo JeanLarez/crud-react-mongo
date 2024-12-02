@@ -23,7 +23,7 @@ function App() {
   const [id, setID] = useState("");
 
   const fetchFrutas = async () => {
-    const URL_BASE = `${URL}`;
+    const URL_BASE = URL;
     let URL_API = URL_BASE;
 
     try {
